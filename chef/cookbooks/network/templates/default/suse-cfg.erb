@@ -15,6 +15,9 @@ iface=@interfaces[@nic.name]
 -%>
 NAME=<%=quote(@nic.name)%>
 STARTMODE=auto
+<% if iface["mtu"] -%>
+MTU=<%=quote(iface["mtu"]) %>
+<% end -%>
 <% if iface["slave"] -%>
 BOOTPROTO=none
 <% else -%>
